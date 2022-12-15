@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Layout from '../../components/layout'
 export const collections = () => {
   return (
  
-    <main>
+    <Layout>
       <title>Exhibitions page</title>
-      <h1>Collections</h1>
       <p>hier komt collections </p>
-      <Link to='/'>Home</Link>
-    </main>
+    </Layout>
    
   )
 }
