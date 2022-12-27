@@ -69,9 +69,10 @@ export const query = graphql`
                 }
               }
               altText
-              slug
+             
             }
           }
+          slug
           id
         }
       }

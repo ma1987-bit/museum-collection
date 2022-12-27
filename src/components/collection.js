@@ -10,34 +10,24 @@ import { CardActionArea } from '@mui/material';
 export const Collection = ({collection, slug}) => {
     const profile = getImage(collection.collectionFields.billboard.localFile)
   return (
-    <>
+    
     <Link to={slug}>
+      <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
       <GatsbyImage
-      
         image={profile}
         alt={collection.collectionFields.billboard.altText}
       />
-      <article >
-        {collection.collectionFields.collectionName && <p>{collection.collectionFields.collectionName}</p>}
-        
-      </article>
+      
+      <CardContent>
+      <Typography gutterBottom variant="h5" component="div">
+      {collection.collectionFields.collectionName}
+        </Typography>
+        </CardContent>
+        </CardActionArea>
+      </Card>
     </Link>
-     <Card sx={{ maxWidth: 345 }}>
-     <CardActionArea>
-       <CardMedia
-         component="img"
-         height="140"
-         image={profile}
-         alt={collection.collectionFields.billboard.altText}
-       />
-       <CardContent>
-         <Typography gutterBottom variant="h5" component="div">
-         {collection.collectionFields.collectionName}
-         </Typography>
-       </CardContent>
-     </CardActionArea>
-   </Card>
-   </>
+  
   )
 }
 
