@@ -1,0 +1,21 @@
+.collectionname{
+font-size: larger;
+}
+.cardcontainer{
+    display: flex;
+    display: block;
+    position: relative;
+    width: 28vw;
+    height: 28vw;
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.collectioncard{
+text-decoration: none;
+}
+h2{
+    text-decoration: none;
+}

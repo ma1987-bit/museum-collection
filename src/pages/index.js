@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Link ,graphql} from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql} from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Button from '@mui/material/Button';
@@ -62,7 +61,7 @@ query{
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, quality: 100, layout: FULL_WIDTH)
           }
         }
       }

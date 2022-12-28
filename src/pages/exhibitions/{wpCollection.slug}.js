@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
+import {collectionimage} from '../page.module.css'
 function CollectionPage({
     data:{
         wpCollection:{
@@ -52,7 +53,7 @@ function CollectionPage({
           alt={collection.billboard.altText}
         />
       </section>
-      <section >
+      <section className={collectionimage} >
        {picture1 && (
           <GatsbyImage
             image={picture1}
@@ -106,7 +107,7 @@ export const query = graphql`
         picture2 {
           altText
           localFile {
-            childrenImageSharp {
+            childImageSharp {
               gatsbyImageData(placeholder: BLURRED)
             }
           }
@@ -114,7 +115,7 @@ export const query = graphql`
         picture3 {
           altText
           localFile {
-            childrenImageSharp {
+            childImageSharp {
               gatsbyImageData(placeholder: BLURRED)
             }
           }
