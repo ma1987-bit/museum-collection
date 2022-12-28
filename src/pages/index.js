@@ -3,7 +3,7 @@ import { graphql} from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Button from '@mui/material/Button';
-
+import {homepicture} from'./page.module.css'
 
 
 
@@ -12,13 +12,15 @@ const IndexPage = ({data:{wpPage: {homeFields}}}) => {
   const image = getImage(homeFields.picture.localFile)
   return (
   <Layout>
-     <h1>{homeFields.title}</h1>
+    <div >
      <GatsbyImage
+     className={homepicture}
             image={image}
             alt={homeFields.picture.altText}
           />     <div dangerouslySetInnerHTML={{
               __html: homeFields.description,
           }}/>
+        </div>
          <Button target="__blank" variant="contained" href={homeFields.callToAction.url}>{homeFields.callToAction.title}</Button>
   </Layout>
   )
@@ -61,7 +63,7 @@ query{
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
       }
