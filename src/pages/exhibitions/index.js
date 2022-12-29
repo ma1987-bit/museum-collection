@@ -3,7 +3,7 @@ import { graphql} from 'gatsby'
 import Layout from '../../components/layout'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Collection from '../../components/collection'
-
+import {collectionheader,collectiondescription,exhibitiontitle,exhibitionimage,exhibitioncontainer} from '../page.module.css'
 export const collections = ({
   data:{
     allWpCollection:{edges},
@@ -14,22 +14,23 @@ export const collections = ({
   return (
  
     <Layout>
-      <GatsbyImage image={image} alt={exihibtions.billboard.altText}/>
+      <div className={exhibitioncontainer}>
+      <GatsbyImage image={image} alt={exihibtions.billboard.altText} className={exhibitionimage}/>
       
-      <section>
-      <h2>{exihibtions.title}</h2>
         <div
-        
+        className={collectiondescription}
           dangerouslySetInnerHTML={{
             __html: exihibtions.description,
           }}
         />
-        <div>
+        <h2 className={exhibitiontitle}>{exihibtions.title}</h2>
+        <div className={collectionheader}>
           {edges.map(({ node: collection }) => (
             <Collection key={collection.id} slug={collection.slug} collection={collection} />
           ))}
         </div>
-      </section>
+   
+      </div>
     </Layout>
    
   )

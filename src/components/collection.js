@@ -2,25 +2,24 @@ import React from 'react'
 import { Link} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 //import Card from '@mui/material/Card';
-import {collectioncard,collectionname} from './collection.module.css'
+import {billboardimage,collectionlink,collectionheader} from './collection.module.css'
 
 
 export const Collection = ({collection, slug}) => {
     const profile = getImage(collection.collectionFields.billboard.localFile)
   return (
-   
-    <Link to={slug} className={collectioncard}>
+   <div className={collectionheader}>
+    <Link to={slug} className={collectionlink}>
       <GatsbyImage
+      className={billboardimage}
         image={profile}
         alt={collection.collectionFields.billboard.altText}
       />
-      <article>
-      <p className={collectionname}>
+      <p>
       {collection.collectionFields.collectionName}
       </p>
-      </article>
     </Link>
-   
+    </div>
   )
 }
 

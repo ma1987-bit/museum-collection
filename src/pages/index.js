@@ -3,7 +3,8 @@ import { graphql} from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Button from '@mui/material/Button';
-import {homepicture} from'./page.module.css'
+import {homepicture,homedescripition,featuredtext,homebutton,featureddescription} from'./page.module.css'
+import Collection from "../components/collection";
 
 
 
@@ -12,16 +13,31 @@ const IndexPage = ({data:{wpPage: {homeFields}}}) => {
   const image = getImage(homeFields.picture.localFile)
   return (
   <Layout>
-    <div >
+  <section>
+   
      <GatsbyImage
      className={homepicture}
             image={image}
             alt={homeFields.picture.altText}
-          />     <div dangerouslySetInnerHTML={{
+          />     <div className={homedescripition} dangerouslySetInnerHTML={{
               __html: homeFields.description,
           }}/>
-        </div>
-         <Button target="__blank" variant="contained" href={homeFields.callToAction.url}>{homeFields.callToAction.title}</Button>
+        
+         <Button className={homebutton} target="__blank" variant="contained" href={homeFields.callToAction.url}>{homeFields.callToAction.title}</Button>
+         </section>
+         
+      <h2 className={featuredtext}>Featured Collections</h2>
+      <p className={featureddescription} >
+      Anybody home?
+      From December 17, 2022
+Go in search of the sewer crocodile, listen to talking crockery, play board games or draw on the walls... In the playful new family exhibition 'Someone at home?' you will explore the MAS collection together. With the whole family  </p>
+      <div >
+        {homeFields.featuredCollections.map(collection => {
+          return <Collection slug={`exhibitions/${collection.slug}`} key={collection.id} collection={collection} />
+        })}
+      </div>
+  
+        
   </Layout>
   )
 }
