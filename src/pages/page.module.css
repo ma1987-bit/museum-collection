@@ -3,6 +3,41 @@
     display: flex;
     justify-content: space-between;
     margin-top: 120px;
+    background-image: url("../images/download.jpg");
+    background-repeat: no-repeat;
+}
+.collectionimage::before,
+.collectionimage::after {
+  position: absolute;
+  display: inline-flex;
+  content: "";
+
+  z-index: -1;
+  transform-origin: 50%;
+  transform: rotate(90);
+}
+.collectionsheaders{
+    background-image: url("../images/download.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.collectionimage ::before{
+    top: -10%;
+  left: 0%;
+  background-size: 450px 450px;
+  height: 450px;
+  width: 450px;
+  background-image: url("../images/download.jpg");
+}
+.collectionimage ::after{
+    bottom: -10%;
+  right: 0%;
+  background-size: 350px 350px;
+  height: 350px;
+  width: 350px;
+  background-image: url("../images/download.jpg");
 }
 
 .collectiondescription{
@@ -28,9 +63,8 @@ margin-left: 10px;
     padding-top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 35%;
-    padding: 5rem;
-    padding-left: 5px;
+  border-radius: 50%;
+    margin-right: 10px;
   
     
 }
@@ -48,10 +82,41 @@ margin-left: 10px;
     color: rgb(236, 92, 92);
 }
 .homebutton{
-
+margin-left: 10px;
 position: absolute;
 }
 .featureddescription{
 padding: 10px ,10px,10px;
 margin-left: 5px;
+}
+p{
+    color: rgb(15, 8, 31);
+}
+.collectionname{
+text-transform: uppercase;
+color: rgb(6, 106, 149);
+text-align: center;
+}
+.collectiontype{
+    font-size: x-large;
+    color: chocolate;
+    font-weight: bold;
+
+}
+.collectionsfieldinfo{
+    font-weight: 700;
+  text-transform: uppercase;
+  color: rgb(6, 106, 149);
+}
+.collectioninfo{
+color: rgb(4, 4, 4);
+font-weight: 600;
+}
+.collectioninfocontainer{
+margin-left: 10px;
+}
+.billboardpicture{
+margin-top: 20px;
+width: 30%;
+margin-left: 10px;
 }

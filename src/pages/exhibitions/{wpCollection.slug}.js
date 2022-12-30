@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
-import {collectionimage} from '../page.module.css'
+import {collectionimage,collectionsheaders,collectionname,
+  collectiontype,collectionsfieldinfo,collectioninfo,collectioninfocontainer,billboardpicture} from '../page.module.css'
 function CollectionPage({
     data:{
         wpCollection:{
@@ -17,38 +18,41 @@ function CollectionPage({
   const picture3 = getImage(collection.picture3.localFile)
   return (
     <Layout>
-    <section >
+    <section className={collectionsheaders} >
         <article>
-          <h1>
+          <h1 className={collectionname}>
             {collection.collectionName}
           </h1>
           <div>
             {typeCollections.map((role, i) => (
-              <span>
+              <span className={collectiontype}>
                 {role.name} {i + 1 < typeCollections.length && "- "}
               </span>
             ))}
           </div>
-          <p>
-            <span >Curator:</span> {collection.curator}
+          <div className={collectioninfocontainer}>
+          <p className={collectioninfo}>
+            <span className={collectionsfieldinfo} >Curator:</span> {collection.curator}
           </p>
           <p>
-            <span >ConstructionYear:</span> {collection.constructionYear}
+            <span className={collectionsfieldinfo} >ConstructionYear:</span> {collection.constructionYear}
           </p>
           <p>
-            <span >ExhibitionCapacity:</span> {collection.exhibitionCapacity}
+            <span className={collectionsfieldinfo} >ExhibitionCapacity:</span> {collection.exhibitionCapacity}
           </p>
           <p>
-            <span >ExhibitionFloor:</span> {collection.exhibitionFloor}
+            <span className={collectionsfieldinfo} >ExhibitionFloor:</span> {collection.exhibitionFloor}
           </p>
           <p>
-            <span >TicketPrice:</span> {collection.ticketPrice}£
+            <span className={collectionsfieldinfo} >TicketPrice:</span> {collection.ticketPrice}£
           </p>
           <p>
-            <span >Address:</span> {collection.address}
+            <span className={collectionsfieldinfo} >Address:</span> {collection.address}
           </p>
+          </div>
         </article>
         <GatsbyImage
+        className={billboardpicture}
           image={image}
           alt={collection.billboard.altText}
         />

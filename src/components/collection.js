@@ -2,7 +2,7 @@ import React from 'react'
 import { Link} from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 //import Card from '@mui/material/Card';
-import {billboardimage,collectionlink,collectionheader} from './collection.module.css'
+import {billboardimage,collectionlink,collectionheader,collectionname} from './collection.module.css'
 
 
 export const Collection = ({collection, slug}) => {
@@ -15,7 +15,7 @@ export const Collection = ({collection, slug}) => {
         image={profile}
         alt={collection.collectionFields.billboard.altText}
       />
-      <p>
+      <p className={collectionname}>
       {collection.collectionFields.collectionName}
       </p>
     </Link>
