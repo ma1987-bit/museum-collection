@@ -49,3 +49,13 @@ width: 100%;
 text-decoration: none;
 
 }
+.logo{
+  width: 60px;
+  height: 110px;
+  margin-left: -5px;
+}
+.navlink{
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}

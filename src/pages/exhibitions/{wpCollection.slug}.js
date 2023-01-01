@@ -34,19 +34,19 @@ function CollectionPage({
           <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >Curator:</span> {collection.curator}
           </p>
-          <p>
+          <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >ConstructionYear:</span> {collection.constructionYear}
           </p>
-          <p>
+          <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >ExhibitionCapacity:</span> {collection.exhibitionCapacity}
           </p>
-          <p>
+          <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >ExhibitionFloor:</span> {collection.exhibitionFloor}
           </p>
-          <p>
+          <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >TicketPrice:</span> {collection.ticketPrice}£
           </p>
-          <p>
+          <p className={collectioninfo}>
             <span className={collectionsfieldinfo} >Address:</span> {collection.address}
           </p>
           </div>

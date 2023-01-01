@@ -44,11 +44,13 @@
     float: left;
    font-size: x-large;
    margin-left: 10px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .exhibitiontitle{
 text-align: center;
 color: rgb(6, 106, 149);
 text-transform: uppercase;
+margin: 5px,5px;
 
 }
 .exhibitionimage{
@@ -57,6 +59,12 @@ float: left;
 width: 70%;
 height: 100%;
 margin-left: 10px;
+}
+.exhibitioncontainer{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  
 }
 .homepicture{
     margin-top: 0;
@@ -73,6 +81,7 @@ margin-left: 10px;
     text-align: justify;
     margin-left: 10px;
     overflow: visible;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 .featuredtext{
@@ -88,6 +97,8 @@ position: absolute;
 .featureddescription{
 padding: 10px ,10px,10px;
 margin-left: 5px;
+font-size: x-large;
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
 p{
     color: rgb(15, 8, 31);
@@ -107,6 +118,7 @@ text-align: center;
     font-weight: 700;
   text-transform: uppercase;
   color: rgb(6, 106, 149);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .collectioninfo{
 color: rgb(4, 4, 4);
@@ -119,4 +131,41 @@ margin-left: 10px;
 margin-top: 20px;
 width: 30%;
 margin-left: 10px;
+}
+.inputtext{
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+.submitbtn{
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.submitbtn:hover{
+  background-color: #45a049;
+}
+.formcontainer{
+  display: flex;
+ justify-content: center;
+  border-radius: 5px;
+  width: 70%;
+  background-image: url(../images/download.jpg);
+  background-repeat: no-repeat;
+background-size: cover;
+  padding: 20px;
+  margin-left: 40px;
+}
+.formlabel{
+  font-weight: 600;
 }
